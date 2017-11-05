@@ -5,19 +5,22 @@ import pl.put.modeling.financialpiramide.bank.product.Product;
 import java.math.BigDecimal;
 
 public class Deposit implements  Operation{
-    private Product _destinationAccount;
-    private BigDecimal _value;
+    private Product destinationAccount;
+    private BigDecimal value;
 
-    public Deposit(Product DestinationAccount, BigDecimal Value)
+    public Deposit(Product destinationAccount, BigDecimal value)
     {
-        _destinationAccount = DestinationAccount;
-        _value = Value;
+        this.destinationAccount = destinationAccount;
+        this.value = value;
     }
 
     @Override
     public boolean operate()
     {
-        _destinationAccount.setBalance(_destinationAccount.getBalance().add(_value));
-        return true;
+        if (value.compareTo(BigDecimal.ZERO) > 0) {
+            destinationAccount.setBalance(destinationAccount.getBalance().add(value));
+            return true;
+        }
+        return false;
     }
 }

@@ -1,6 +1,6 @@
 package pl.put.modeling.financialpiramide.bank.history;
 
-import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import pl.put.modeling.financialpiramide.bank.Bank;
@@ -17,8 +17,9 @@ public class HistoryLogger {
     }
 
     @Around("execution(* pl.put.modeling.financialpiramide.bank.operation.Operation.operate(..))")
-    public void addHistoryEntry(JoinPoint operation) {
-
+    public boolean addHistoryEntry(ProceedingJoinPoint operation) throws Throwable {
+        System.out.println("Hello there!");
+        return (boolean) operation.proceed();
     }
 
 }

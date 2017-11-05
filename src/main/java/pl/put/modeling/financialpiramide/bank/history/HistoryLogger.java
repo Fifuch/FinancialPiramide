@@ -1,5 +1,7 @@
 package pl.put.modeling.financialpiramide.bank.history;
 
-public class HistoryLogger {
+import pl.put.modeling.financialpiramide.bank.Bank;
 
+public class HistoryLogger {
+    private Bank bank;
 }

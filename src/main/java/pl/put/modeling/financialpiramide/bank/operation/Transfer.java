@@ -17,14 +17,9 @@ public class Transfer implements Operation {
     }
     @Override
     public boolean operate() {
-        Withdrawal withdrawal = new Withdrawal(_sourceAccount,_value);
-        Deposit deposit = new Deposit(_destinationAccount,_value);
-        if(withdrawal.operate())
-        {
-            deposit.operate();
-            return true;
-        }
-        else
-        return false;
+        Withdrawal withdrawal = new Withdrawal(_sourceAccount, _value);
+        Deposit deposit = new Deposit(_destinationAccount, _value);
+
+        return withdrawal.operate() && deposit.operate();
     }
 }

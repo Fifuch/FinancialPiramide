@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Placement implements Product {
-  
+
     @Override
     public List<Product> getProducts() {
         return null;

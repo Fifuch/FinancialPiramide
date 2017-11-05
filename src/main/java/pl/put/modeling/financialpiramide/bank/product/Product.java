@@ -12,9 +12,9 @@ public interface Product {
 
     void setProducts(List<Product> products);
 
-    InterestSystem getInterests();
+    InterestSystem getInterestSystem();
 
-    void setInterests(InterestSystem interests);
+    void setInterestSystem(InterestSystem interestSystem);
 
     LocalDateTime getCreationDate();
 

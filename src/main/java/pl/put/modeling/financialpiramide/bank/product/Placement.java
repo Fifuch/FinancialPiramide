@@ -4,57 +4,72 @@ import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Placement implements Product {
 
+    private List<Product> products;
+    private InterestSystem interestSystem;
+    private LocalDateTime creationDate;
+    private Long accountNumber;
+    private BigDecimal balance;
+
+    public Placement(InterestSystem interestSystem, Long accountNumber) {
+        this.interestSystem = interestSystem;
+        this.accountNumber = accountNumber;
+        this.creationDate = LocalDateTime.now();
+        this.balance = BigDecimal.ONE;
+        this.products = new ArrayList<>();
+    }
+
     @Override
     public List<Product> getProducts() {
-        return null;
+        return products;
     }
 
     @Override
     public void setProducts(List<Product> products) {
-
+        this.products = products;
     }
 
     @Override
-    public InterestSystem getInterests() {
-        return null;
+    public InterestSystem getInterestSystem() {
+        return interestSystem;
     }
 
     @Override
-    public void setInterests(InterestSystem interests) {
-
+    public void setInterestSystem(InterestSystem interestSystem) {
+        this.interestSystem = interestSystem;
     }
 
     @Override
     public LocalDateTime getCreationDate() {
-        return null;
+        return creationDate;
     }
 
     @Override
     public void setCreationDate(LocalDateTime creationDate) {
-
+        this.creationDate = creationDate;
     }
 
     @Override
     public Long getAccountNumber() {
-        return null;
+        return accountNumber;
     }
 
     @Override
     public void setAccountNumber(Long accountNumber) {
-
+        this.accountNumber = accountNumber;
     }
 
     @Override
     public BigDecimal getBalance() {
-        return null;
+        return balance;
     }
 
     @Override
     public void setBalance(BigDecimal balance) {
-
+        this.balance = balance;
     }
 }

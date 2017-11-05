@@ -8,17 +8,16 @@ public class Withdrawal implements Operation {
     private Product _sourceAccount;
     private BigDecimal _value;
 
-    public Withdrawal(Product SourceAccount, BigDecimal Value)
-    {
+    public Withdrawal(Product SourceAccount, BigDecimal Value) {
         _sourceAccount = SourceAccount;
         _value = Value;
     }
 
     @Override
     public boolean operate() {
-        BigDecimal difference =_sourceAccount.getBalance().subtract(_value);
+        BigDecimal difference = _sourceAccount.getBalance().subtract(_value);
 
-        if(difference.compareTo(BigDecimal.ZERO) > 0 ) {
+        if (difference.compareTo(BigDecimal.ZERO) > 0) {
             _sourceAccount.setBalance(difference);
             return true;
         }

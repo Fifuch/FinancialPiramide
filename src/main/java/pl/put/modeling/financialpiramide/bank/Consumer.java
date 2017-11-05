@@ -55,4 +55,7 @@ public class Consumer {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
+
+    public void setProduct(Product product) {this.products.add(product);}
+
 }

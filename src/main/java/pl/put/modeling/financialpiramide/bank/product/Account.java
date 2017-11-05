@@ -19,7 +19,7 @@ public class Account implements Product {
         this.interestSystem = interestSystem;
         this.accountNumber = accountNumber;
         this.creationDate = LocalDateTime.now();
-        this.balance = BigDecimal.ONE;
+        this.balance = BigDecimal.ZERO;
         this.products = new ArrayList<>();
     }
 

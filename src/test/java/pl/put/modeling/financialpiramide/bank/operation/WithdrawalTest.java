@@ -3,7 +3,6 @@ package pl.put.modeling.financialpiramide.bank.operation;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
 import pl.put.modeling.financialpiramide.bank.interest.NewCustomerInterestSystem;
 import pl.put.modeling.financialpiramide.bank.product.Account;
 import pl.put.modeling.financialpiramide.bank.product.Product;

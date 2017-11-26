@@ -24,6 +24,8 @@ public interface Product {
 
     void setAccountNumber(Long accountNumber);
 
+    BigDecimal calculateInterest();
+
     BigDecimal getBalance();
 
     void setBalance(BigDecimal balance);

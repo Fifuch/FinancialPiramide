@@ -64,6 +64,11 @@ public class Placement implements Product {
     }
 
     @Override
+    public BigDecimal calculateInterest() {
+        return interestSystem.calculateInterest(balance);
+    }
+
+    @Override
     public BigDecimal getBalance() {
         return balance;
     }

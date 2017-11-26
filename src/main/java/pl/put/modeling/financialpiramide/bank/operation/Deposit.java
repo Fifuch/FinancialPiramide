@@ -5,6 +5,7 @@ import pl.put.modeling.financialpiramide.bank.product.Product;
 import java.math.BigDecimal;
 
 public class Deposit implements Operation {
+
     private Product destinationAccount;
     private BigDecimal value;
 

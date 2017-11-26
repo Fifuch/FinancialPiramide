@@ -1,4 +1,7 @@
 package pl.put.modeling.financialpiramide.bank.interest;
 
-public class InterestSystem {
+import java.math.BigDecimal;
+
+public interface InterestSystem {
+    BigDecimal calculateInterest(BigDecimal amount);
 }

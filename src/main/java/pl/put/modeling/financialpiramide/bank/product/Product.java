@@ -30,4 +30,7 @@ public interface Product {
 
     void setBalance(BigDecimal balance);
 
+    Boolean getActive();
+
+    void setActive(Boolean active);
 }

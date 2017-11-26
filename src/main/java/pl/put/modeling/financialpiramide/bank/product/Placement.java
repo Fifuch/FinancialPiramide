@@ -14,6 +14,7 @@ public class Placement implements Product {
     private LocalDateTime creationDate;
     private Long accountNumber;
     private BigDecimal balance;
+    private Boolean isActive;
 
     public Placement(InterestSystem interestSystem, Long accountNumber) {
         this.interestSystem = interestSystem;
@@ -21,6 +22,7 @@ public class Placement implements Product {
         this.creationDate = LocalDateTime.now();
         this.balance = BigDecimal.ONE;
         this.products = new ArrayList<>();
+        this.isActive = true;
     }
 
     @Override
@@ -76,5 +78,13 @@ public class Placement implements Product {
     @Override
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }

@@ -14,6 +14,7 @@ public class Account implements Product {
     private LocalDateTime creationDate;
     private Long accountNumber;
     private BigDecimal balance;
+    private Boolean isActive;
 
     public Account(InterestSystem interestSystem, Long accountNumber) {
         this.interestSystem = interestSystem;
@@ -21,6 +22,7 @@ public class Account implements Product {
         this.creationDate = LocalDateTime.now();
         this.balance = BigDecimal.ZERO;
         this.products = new ArrayList<>();
+        this.isActive = true;
     }
 
     @Override
@@ -76,5 +78,15 @@ public class Account implements Product {
     @Override
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    @Override
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }

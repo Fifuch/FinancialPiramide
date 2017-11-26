@@ -5,20 +5,20 @@ import pl.put.modeling.financialpiramide.bank.product.Product;
 import java.math.BigDecimal;
 
 public class Transfer implements Operation {
-    private Product _sourceAccount;
-    private Product _destinationAccount;
-    private BigDecimal _value;
+    private Product sourceAccount;
+    private Product destinationAccount;
+    private BigDecimal value;
 
-    public Transfer(Product SourceAccount, Product DestinationAccount, BigDecimal Value)
-    {
-        _sourceAccount = SourceAccount;
-        _destinationAccount = DestinationAccount;
-        _value = Value;
+    public Transfer(Product SourceAccount, Product DestinationAccount, BigDecimal Value) {
+        sourceAccount = SourceAccount;
+        destinationAccount = DestinationAccount;
+        value = Value;
     }
+
     @Override
     public boolean operate() {
-        Withdrawal withdrawal = new Withdrawal(_sourceAccount, _value);
-        Deposit deposit = new Deposit(_destinationAccount, _value);
+        Withdrawal withdrawal = new Withdrawal(sourceAccount, value);
+        Deposit deposit = new Deposit(destinationAccount, value);
 
         return withdrawal.operate() && deposit.operate();
     }

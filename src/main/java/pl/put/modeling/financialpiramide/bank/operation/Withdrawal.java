@@ -5,20 +5,20 @@ import pl.put.modeling.financialpiramide.bank.product.Product;
 import java.math.BigDecimal;
 
 public class Withdrawal implements Operation {
-    private Product _sourceAccount;
-    private BigDecimal _value;
+    private Product sourceAccount;
+    private BigDecimal value;
 
     public Withdrawal(Product SourceAccount, BigDecimal Value) {
-        _sourceAccount = SourceAccount;
-        _value = Value;
+        sourceAccount = SourceAccount;
+        value = Value;
     }
 
     @Override
     public boolean operate() {
-        BigDecimal difference = _sourceAccount.getBalance().subtract(_value);
+        BigDecimal difference = sourceAccount.getBalance().subtract(value);
 
-        if (difference.compareTo(BigDecimal.ZERO) > 0) {
-            _sourceAccount.setBalance(difference);
+        if (difference.compareTo(BigDecimal.ZERO) > 0 && value.signum()==1) {
+            sourceAccount.setBalance(difference);
             return true;
         }
         return false;

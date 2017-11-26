@@ -14,6 +14,8 @@ public class Loan implements Product {
     private LocalDateTime creationDate;
     private Long accountNumber;
     private BigDecimal balance;
+    private Boolean isActive;
+
 
     public Loan(InterestSystem interestSystem, Long accountNumber) {
         this.interestSystem = interestSystem;
@@ -71,5 +73,15 @@ public class Loan implements Product {
     @Override
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    @Override
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }

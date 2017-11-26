@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
+import pl.put.modeling.financialpiramide.bank.interest.NewCustomerInterestSystem;
 import pl.put.modeling.financialpiramide.bank.product.Account;
 import pl.put.modeling.financialpiramide.bank.product.Product;
 
@@ -15,7 +16,7 @@ public class DepositTest {
 
     @Before
     public void createAccount() {
-        account = new Account(new InterestSystem(), 1L);
+        account = new Account(new NewCustomerInterestSystem(), 1L);
     }
 
 

@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
+import pl.put.modeling.financialpiramide.bank.interest.NewCustomerInterestSystem;
 import pl.put.modeling.financialpiramide.bank.product.Account;
 import pl.put.modeling.financialpiramide.bank.product.Product;
 
@@ -16,7 +17,7 @@ public class WithdrawalTest {
 
     @Before
     public void setSampleAccount() {
-        account = new Account(new InterestSystem(), 0L);
+        account = new Account(new NewCustomerInterestSystem(), 0L);
     }
 
     @Test

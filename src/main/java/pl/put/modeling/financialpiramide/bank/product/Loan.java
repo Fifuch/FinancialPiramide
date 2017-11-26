@@ -23,6 +23,7 @@ public class Loan implements Product {
         this.creationDate = LocalDateTime.now();
         this.balance = BigDecimal.ONE;
         this.products = new ArrayList<>();
+        this.isActive = true;
     }
 
     @Override

@@ -22,6 +22,7 @@ public class Account implements Product {
         this.creationDate = LocalDateTime.now();
         this.balance = BigDecimal.ZERO;
         this.products = new ArrayList<>();
+        this.isActive = true;
     }
 
     @Override

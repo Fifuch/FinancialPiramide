@@ -1,6 +1,7 @@
 package pl.put.modeling.financialpiramide.bank.product;
 
 import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
+import pl.put.modeling.financialpiramide.bank.report.Report;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -90,4 +91,10 @@ public class Loan implements Product {
     public void setActive(Boolean active) {
         isActive = active;
     }
+
+	@Override
+	public void accept(Report report) {
+		report.visitLoan(this);
+
+	}
 }

@@ -11,6 +11,7 @@ import pl.put.modeling.financialpiramide.bank.product.Product;
 import java.math.BigDecimal;
 
 public class TransferTest {
+	
     private Product accountFrom, accountTo;
 
     @Before

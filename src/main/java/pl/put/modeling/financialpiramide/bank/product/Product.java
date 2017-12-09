@@ -1,12 +1,15 @@
 package pl.put.modeling.financialpiramide.bank.product;
 
 import pl.put.modeling.financialpiramide.bank.interest.InterestSystem;
+import pl.put.modeling.financialpiramide.bank.report.Report;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public interface Product {
+
+	void accept(Report report);
 
     List<Product> getProducts();
 

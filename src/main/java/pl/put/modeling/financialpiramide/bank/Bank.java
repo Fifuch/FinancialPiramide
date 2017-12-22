@@ -4,7 +4,6 @@ import pl.put.modeling.financialpiramide.bank.history.HistoryEntry;
 import pl.put.modeling.financialpiramide.bank.operation.Operation;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import java.util.List;
 
 public class Bank {

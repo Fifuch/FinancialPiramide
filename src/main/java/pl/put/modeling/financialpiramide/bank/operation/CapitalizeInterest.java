@@ -1,6 +1,5 @@
 package pl.put.modeling.financialpiramide.bank.operation;
 
-import pl.put.modeling.financialpiramide.bank.product.Account;
 import pl.put.modeling.financialpiramide.bank.product.Product;
 
 import java.math.BigDecimal;

@@ -1,9 +1,10 @@
 package pl.put.modeling.financialpiramide.bank.operation;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import pl.put.modeling.financialpiramide.bank.interest.NewCustomerInterestSystem;
 import pl.put.modeling.financialpiramide.bank.product.Account;
 import pl.put.modeling.financialpiramide.bank.product.Product;
@@ -14,7 +15,7 @@ public class CapitalizeInterestTest {
 
     Product account;
 
-    @Before
+    @BeforeEach
     public void createAccount() {
         account = new Account(new NewCustomerInterestSystem(), 1L);
     }
@@ -26,7 +27,7 @@ public class CapitalizeInterestTest {
         CapitalizeInterest capitalizeInterest = new CapitalizeInterest(account);
         capitalizeInterest.operate();
 
-        Assert.assertTrue(new BigDecimal("100666").compareTo(account.getBalance().setScale(2,BigDecimal.ROUND_FLOOR))==0);
+        Assertions.assertTrue(new BigDecimal("100666").compareTo(account.getBalance().setScale(2,BigDecimal.ROUND_FLOOR))==0);
     }
 
     @Test
@@ -36,6 +37,6 @@ public class CapitalizeInterestTest {
         CapitalizeInterest capitalizeInterest = new CapitalizeInterest(account);
         capitalizeInterest.operate();
 
-        Assert.assertTrue(new BigDecimal(0).compareTo(account.getBalance().setScale(2,BigDecimal.ROUND_FLOOR))==0);
+        Assertions.assertTrue(new BigDecimal(0).compareTo(account.getBalance().setScale(2,BigDecimal.ROUND_FLOOR))==0);
     }
 }

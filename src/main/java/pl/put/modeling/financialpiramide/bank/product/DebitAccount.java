@@ -82,12 +82,11 @@ public class DebitAccount implements Product {
 
     @Override
     public void setBalance(BigDecimal balance) {
-        if(currentDebit.compareTo(balance) >= 0) {
-            currentDebit = currentDebit.subtract(currentDebit);
-        } else {
-            balance = balance.subtract(currentDebit);
-            currentDebit = new BigDecimal(0);
-            account.setBalance(balance);
+        balance = balance.subtract(debitLimit);
+        account.setBalance(balance);
+        if(account.getBalance().compareTo(BigDecimal.ZERO) < 0) {
+            currentDebit = currentDebit.subtract(account.getBalance());
+            account.setBalance(BigDecimal.ZERO);
         }
     }
 

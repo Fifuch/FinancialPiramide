@@ -23,7 +23,7 @@ public class Kir implements IKir {
     private boolean transfersProcessing() {
         for(String bankId : transferQueue.keySet()){
             Bank b = banks.get(bankId);
-            Operation transfer = new Transfer(); //? or move to bank // and send list with oper to bank
+            Operation transfer = new Transfer(null, null, null); //? or move to bank // and send list with oper to bank
             b.operate(transfer);
         }
 

@@ -50,6 +50,7 @@ class WithdrawalTest {
     }
 
     @Test
+    @DisplayName("Withdraw 50PLN from empty account with 100PLN debit possible.")
     void testWithdrawalFromDebitAccount() {
         Operation withdrawal = new Withdrawal(debitAccount, new BigDecimal(50));
         withdrawal.operate();
